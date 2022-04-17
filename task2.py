@@ -9,8 +9,11 @@ def currency_rates(*name_cent):
     cent = r.json()
     
     for name in name_cent:
-        print(f"1 RUB = {cent['rates'][name]} {name}, сегодня {dt_string}")
+        result = f"1 RUB = {cent['rates'][name]} {name}, сегодня {dt_string}"
+        print(result)
+        
+    return result
     
     
 if __name__ == "__main__":
-    currency_rates('USD', 'AMD')
+    currency_rates('USD', 'AMD', 'CAD')
